@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* Remove the spin-buttons for number input */
+        input[type=number]::-webkit-outer-spin-button,
+        input[type=number]::-webkit-inner-spin-button {
+            /* display: none; <- Crashes Chrome on hover */
+            -webkit-appearance: none;
+            margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+        }
+
+        input[type=number] {
+            -moz-appearance:textfield !important; /* Firefox */
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"/>
+    <title>Number Guesser</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Number Guesser</h1>
+        <div id="game">
+            <p>Guess a number between <span class="min-num">1</span> and <span class="max-num">10</span></p>
+            <input type="number" id="guess-input" placeholder="Enter your guess...">
+            <input type="submit" value="Submit" id="guess-value">
+            <p class="message"></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
